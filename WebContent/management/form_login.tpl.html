@@ -1,0 +1,43 @@
+<meta charset="utf-8">
+
+<div class="form form1">
+	<div class="login-form">
+		<form method="post" name="loginForm" ng-submit="login()" enctype="application/x-www-form-urlencoded">
+				<label class="title">Login</label>
+				<div style="text-align: right; margin-bottom: 35px;">
+					<button type="button" class="btn btn-dark" onClick="location.href='../index.jsp'">홈으로</button>
+				</div>
+		        <div class="form-group">
+		            <label class="login-label" for="mgrNo">관리자번호</label>
+		            <input type="text" name="mgrNo" class="form-control" placeholder="Enter manager_ID" ng-model="mgrNo" ng-pattern="/^[0-9]{10}$/" ng-required="true">
+		           	<div ng-message="loginForm.mgrNo.$error">
+						<span class="error" ng-show="loginForm.mgrNo.$error.required">아이디 입력이 필요합니다.</span>
+						<span class="error" ng-show="loginForm.mgrNo.$error.pattern">10자리이상의 숫자를 입력하세요.</span>
+					</div>
+		        </div>
+		        <div class="form-group">
+		            <label class="login-label" for="mgrPwd">비밀번호</label>
+		            <input type="password" class="form-control" name="mgrPwd" placeholder="Enter Password" ng-model="mgrPwd" ng-required="true">
+		           	<div ng-message="loginForm.mgrPwd.$error">
+						<span id="msgId" class="error" ng-show="loginForm.mgrPwd.$error.required">비밀번호 입력이 필요합니다.</span>
+					</div>
+		        </div>
+				<div class="form-btn-group">
+					<button type="submit" class="btn btn-primary" ng-disabled="loginForm.$invalid">로그인</button>
+					<button type="button" class="btn btn-success" ng-click="openJoinForm($event)">등록</button>
+				</div>
+		</form>
+	</div>
+	<div id="login-carousel" class="carousel slide" data-ride="carousel">
+  		<div class="carousel-inner">
+    		<div class="carousel-item active">
+      			<img src="images/mg_home_img1.jpg" class="d-block w-100" alt="...">
+    		</div>
+    		<div class="carousel-item">
+      			<img src="images/mg_home_img2.jpg" class="d-block w-100" alt="...">
+    		</div>
+		    <div class="carousel-item">
+		      <img src="images/mg_home_img3.jpg" class="d-block w-100" alt="...">
+		    </div>
+  		</div>
+</div>

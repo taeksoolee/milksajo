@@ -1,0 +1,71 @@
+<meta charset="utf-8">
+
+<!-- product : 구분등록 수정 -->
+<div class="form form1">
+	<div class="add-div-form">
+		<div class="btn-group">
+			<button type="button" class="exit-btn" ng-click="closeAddDivForm()">X</button>
+		</div>
+		
+		<div class="title-form">
+			<label class="title">Division</label>
+		</div>
+		
+		<!-- 시리얼 / 구분(select) / 이름 / 원산지 / 용량 / 가격 -->
+		<div class="inputs">
+			<label>구분</label>
+			<input type="text" class="form-control" maxlength="7" ng-model="division.div" required/>
+			<label>특징</label>
+			<textarea rows="30" cols="100%" class="form-control" ng-model="division.feature"></textarea>
+			<label>용량구분</label>
+			<input type="text" class="form-control" ng-model="division.size" required/>
+			<button type="button" class="btn btn-dark" style="width: 100%;" ng-click="inputDiv()">입력하기</button>
+		</div>
+		<div class="inputs modify">
+			<label>구분</label>
+			<select class="form-control" ng-model="selectedDivision" ng-change="changeDiv()">
+				<option ng-repeat="option in productDivision" value="{{option}}">{{option.div}}</option>
+			</select>
+			<label>특징</label>
+			<textarea rows="30" cols="100%" class="form-control" ng-model="selectedDiv.feature"></textarea>
+			<label>용량구분</label>
+			<input type="text" class="form-control" ng-model="selectedDiv.size"required/>
+			<button type="button" class="btn btn-dark" ng-click="modifyDiv()">수정하기</button>
+			<button type="button" class="btn btn-dark" ng-click="deleteDiv()">삭제하기</button>
+		</div>
+	</div>
+</div>
+
+<style>
+	.add-div-form{
+		width: 100%;
+	}
+	.add-div-form .title-form{
+		text-align: center;
+    	font-size: 35px;
+    	padding-top: 18px;
+	}
+	.add-div-form .inputs{
+		display: inline-block;
+    	width: 40%;
+    	margin: 0 4%;
+	}
+	
+	.add-div-form input,
+	.add-div-form select{
+		margin-bottom: 10px;
+	}
+	
+	.add-div-form textarea{
+		height: 230px;
+		margin-bottom: 10px;
+		resize: none;
+	}
+	
+	.add-div-form .btn{
+		width: 49%;
+    	margin-top: 25px;
+    	display: inline;
+	}
+	
+</style>

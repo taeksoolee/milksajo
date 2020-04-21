@@ -1,0 +1,83 @@
+<meta charset="utf-8">
+
+<div class="btn-group mr-2">
+	<!-- 세로고침 버튼 -->
+  <button type="button" class="btn btn-success" ng-click="dataRefresh('product')"><i class="fas fa-sync-alt"></i></button>
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <div class="input-group-text"><i class="fa fa-search"></i></div>
+    <button class="btn btn-outline-secondary" type="button" ng-click="changeProductSearchModel()">{{selectProductModel}}</button>
+  </div>
+  <input type="text" id="productSearch" class="form-control" ng-model="productSearch[selectProductModel]" placeholder="search">
+</div>
+
+<div class="btn-group mr-2">
+	<!-- 제품 입고버튼 -->
+  <button type="button" class="btn btn-warning" ng-click="openAddDivForm()">Div</button>
+</div>
+
+<div class="btn-group mr-2">
+  <!-- 제품구분 추가 및 삭제 폼 버튼-->
+  <button type="button" class="btn btn-warning" ng-click="openInputForm()">Input</button>
+  <!-- 기념일 조회버튼 -->
+  <button type="button" class="btn btn-warning" ng-click="openAddForm()">Add</button>
+</div>
+
+<div id="product-table">
+  <table class="table">
+      <thead class="thead-dark">
+      <!-- table title -->
+        <tr>
+          <th class="no">no</th>
+          <th class="serial" ng-click="sortBy('serial')">serial</th>
+          <th class="div" ng-click="sortBy('div')">div</th>
+          <th class="name" ng-click="sortBy('name')">name</th>
+          <th class="origin" ng-click="sortBy('origin')">origin</th>
+          <th class="size" ng-click="sortBy('size')">size</th>
+          <th class="price" ng-click="sortBy('price')">price</th>
+          <th class="amount" ng-click="sortBy('amount')">amount</th>
+          <th class="sales" ng-click="sortBy('sales')">sales</th>
+          <th class="ctrl-btn">remove</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="product in products | orderBy: sortField:reverseOrder | filter: productSearch | limitTo : tableProductLimit">
+          <td>{{$index + 1}}</td>
+          <td>{{product.serial}}</td>
+          <td>{{product.div}}</td>
+          <td>{{product.name}}</td>
+          <td>{{product.origin}}</td>
+          <td>{{product.size}}</td>
+          <td>{{product.price}}</td>
+          <td><input type="number" Value="{{product.amount}}" style="width: 100%;"></td>
+          <td><input type="number" value="{{product.sales}}" style="width: 100%;"></td>
+          <td class="btns">
+              <button type="button" style="margin: 14px auto;">X</button>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+      	<tr>
+      		<td colspan="10" class="downTd">
+      		<button type="button" ng-click="downList('product')">
+      			<i class="fa fa-chevron-down"></i>
+      		</button>
+      		</td>
+      	</tr>
+      </tfoot>
+    </table>
+</div>
+
+<div ng-show="viewControl.inputForm.value">
+	<input-form></input-form>
+</div>
+
+<div ng-show="viewControl.addProductForm.value">
+	<add-form></add-form>
+</div>
+
+<div ng-show="viewControl.addDivForm.value">
+	<add-div></add-div>
+</div>

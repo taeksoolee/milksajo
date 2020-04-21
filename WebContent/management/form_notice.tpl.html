@@ -1,0 +1,26 @@
+<meta charset="utf-8">
+
+<div class="form form1 notice-form">
+	<div class="table">
+		<button type="button" class="exit-btn" ng-click="closeNoticeForm()">X</button>
+		<div class="title">Notice</div>
+		<table class="table table-striped">
+		  <thead class="thead-dark">
+		    <tr>
+		      <th class="no" scope="col">#</th>
+		      <th class="employee-no" scope="col">employee_no</th>
+		      <th class="comment" scope="col">comment</th>
+		      <th class="date" scope="col">date</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr ng-repeat="content in notice">
+		      <th scope="row">{{$index + 1}}</th>
+		      <td>{{content.e_no}}</td>
+		      <td>{{content.comment}}</td>
+		      <td>{{content.date}}</td>
+		    </tr>
+		  </tbody>
+		</table>
+	</div>
+</div>

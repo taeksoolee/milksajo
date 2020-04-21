@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="author" content="MILKSAJO">
+      <!-- 브라우저 호환성 지정 -->
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="icon" href="yourIconUrl" type="image/gif" sizes="16x16">
+      <title>Collection - MILKSAJO</title>
+
+      <!-- external stylesheet -->
+      <link rel="stylesheet" href="css/style.css">
+
+      <!-- bootstrap cdn -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+      <!-- 아이콘 -->
+      <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+      <!-- google font -->
+      <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+
+      <!-- jquery cdn -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+      <!-- greensock cdn (왼쪽 메뉴창 animation)  -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+
+      <!-- 스크롤  animations -->
+      <link rel="stylesheet" href="css/animate.css">
+      <script src="js/wow.min.js"></script>
+</head>
+<body>
+      <div class="shop-container">
+
+            <!-- NAVIGATION STARTS -->
+
+            <div class="nav">
+                  <div class="menu-open">
+                        <ion-icon name="menu"></ion-icon>
+                  </div>
+                  <div class="brand">
+                        <span><a href="main.html">MILKSAJO</a></span>
+                  </div>
+                  <div class="menu">
+                        <div class="menu-close">
+                              <ion-icon name="close"></ion-icon>
+                        </div>
+                        <ul>
+                              <li><a href="main.html">Home</a></li>
+                              <li><a href="#">collection</a>
+                              	<div>
+                              		<a href="shop.html">ALL</a><br>
+                              		<a href="shop.html#milk">MILK</a><br>
+                              		<a href="shop.html#fermented">FERMENTED</a><br>
+                              		<a href="shop.html#cheese">CHEESE</a><br>
+                              		<a href="shop.html#fat">CHEESE</a><br>
+                              	</div>
+                              </li>
+                              <li><a href="about.html">Our story</a></li>
+                              <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                  </div>
+                  <div class="cart-open">
+                        <ion-icon name="cart"></ion-icon>
+                  </div>
+                  <div class="cart">
+                        <div class="cart-close">
+                              <ion-icon name="close"></ion-icon>
+                        </div>
+                        <div class="cart-join">
+                              <a href="login.html">LOGIN</a> &nbsp;&nbsp;
+                              <a href="join.html">JOIN</a>
+                        </div>
+                        
+                  </div>
+            </div>
+
+            <!-- NAVIGATION ENDS -->
+
+            <div class="whitespaces"></div>
+
+            <!-- COLLECTION STARTS - 우유 -->
+
+            <div class="collection" id="milk">
+                  <p id="heading">MILK</p>
+
+                  <div class="section prod-list">
+                        <div class="container-fluid">
+                              <div class="row some-cards">
+                                    <div class="col-lg-3 prod wow fadeInUp" data-wow-delay="0.5s">
+                                          <a href="whiteMilk.html">
+                                                <p id="prod-desc">White Fresh Milk</p>
+                                                <img src="images/whiteMilk.jpg" alt="">
+                                                <p id="price">4,000 원</p>
+                                          </a>
+                                    </div>
+                                    <div class="col-lg-3 prod wow fadeInUp" data-wow-delay="0.8s">
+                                          <a href="chocoMilk.html">
+                                                <p id="prod-desc">Chocolate Milk</p>
+                                                <img src="images/chocoMilk.jpg" alt="">
+                                                <p id="price">2,000 원</p>
+                                          </a>
+                                    </div>
+                                    <div class="col-lg-3 prod wow fadeInUp" data-wow-delay="1.1s">
+                                          <a href="strawMilk.html">
+                                                <p id="prod-desc">Strawberry Milk</p>
+                                                <img src="images/strawMilk.jpg" alt="">
+                                                <p id="price">2,000 원</p>
+                                          </a>
+                                    </div>
+                                    <div class="col-lg-3 prod wow fadeInUp" data-wow-delay="1.4s">
+                                          <a href="bananaMilk.html">
+                                                <p id="prod-desc">Banana Milk</p>
+                                                <img src="images/bananaMilk.jpg" alt="">
+                                                <p id="price">2,000 원</p>
+                                          </a>
+                                    </div>
+                                    <br>
+                                    <div class="col-lg-3 prod wow fadeInUp" data-wow-delay="1.4s">
+                                          <a href="coffeeMilk.html">
+                                                <p id="prod-desc">Coffee Milk</p>
+                                                <img src="images/coffeeMilk.png" alt="">
+                                                <p id="price">2,000 원</p>
+                                          </a>
+                                    </div>
+                                    <div class="col-lg-3 prod wow fadeInUp" data-wow-delay="1.4s">
+                                          <a href="lowFatMilk.html">
+                                                <p id="prod-desc">Low-Fat Milk</p>
+                                                <img src="images/lowFatMilk.png" alt="">
+                                                <p id="price">2,000 원</p>
+                                          </a>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+
+            <!-- COLLECTION ENDS -->
+
+            <!-- BANNER SECTION STARTS -->
+
+            <div class="row prod-sec">
+                  <div class="col-lg-6 prod-img">
+                        <img src="images/mainMilk1.jpg" alt="">
+                  </div>
+
+                  <div class="col-lg-4 prod-desc">
+                        <br><br>
+                        <p class="wow fadeInUp" data-wow-delay="0.5s">A glass of milk responsible for your health.</p>
+
+                        <div class="link wow fadeInUp" data-wow-delay="0.6s">
+                              <a href="shop.html">shop now <ion-icon name="arrow-round-forward"></ion-icon></a>
+                        </div>
+                  </div>
+            </div>
+
+            <!-- BANNER SECTION ENDS -->
+
+            <!-- COLLECTION STARTS - 발효유 -->
+
+            <div class="collection" id="fermented">
+                  <p id="heading">FERMENTED MILK</p>
+
+                  <div class="section prod-list">
+                        <div class="container-fluid">
+                              <div class="row some-cards">
+                                    <div class="col-lg-3 prod wow fadeInUp" data-wow-delay="0.5s">
+                                          <a href="drinkYogurt.html">
+                                                <p id="prod-desc">Drink Yogurt</p>
+                                                <img src="images/drinkYogurt.jpg" alt="">
+                                                <p id="price">2,000 원</p>
+                                          </a>
+                                    </div>
+                                    <div class="col-lg-3 prod wow fadeInUp" data-wow-delay="0.5s">
+                                          <a href="plainYogurt.html">
+                                                <p id="prod-desc">Plain Yogurt</p>
+                                                <img src="images/yogurt.jpg" alt="">
+                                                <p id="price">2,000 원</p>
+                                          </a>
+                                    </div>
+                                    <div class="col-lg-3 prod wow fadeInUp" data-wow-delay="1.1s">
+                                          <a href="strawYogurt.html">
+                                                <p id="prod-desc">Strawberry Yogurt</p>
+                                                <img src="images/strawYogurt.jpg" alt="">
+                                                <p id="price">2,500 원</p>
+                                          </a>
+                                    </div>
+                                    <div class="col-lg-3 prod wow fadeInUp" data-wow-delay="1.1s">
+                                          <a href="blueYogurt.html">
+                                                <p id="prod-desc">Blueberry Yogurt</p>
+                                                <img src="images/blueYogurt.jpg" alt="">
+                                                <p id="price">2,500 원</p>
+                                          </a>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+
+            <!-- COLLECTION ENDS -->
+            
+            
+            <!-- CHEESE COLLECTION - 치즈 -->
+
+            <div class="collection" id="cheese">
+                  <p id="heading">CHEESE</p>
+
+                  <div class="section prod-list">
+                        <div class="container-fluid">
+                              <div class="row some-cards">
+                                    <div class="col-lg-3 prod wow fadeInUp" data-wow-delay="0.5s">
+                                          <a href="sliceCheese.html">
+                                                <p id="prod-desc">Slice Cheese</p>
+                                                <img src="images/sliceCheese.jpg" alt="">
+                                                <p id="price">2,000 원</p>
+                                          </a>
+                                    </div>
+                                    <div class="col-lg-3 prod wow fadeInUp" data-wow-delay="1.1s">
+                                          <a href="cheddar.html">
+                                                <p id="prod-desc">Cheddar Cheese</p>
+                                                <img src="images/cheddar.jpg" alt="">
+                                                <p id="price">2,000 원</p>
+                                          </a>
+                                    </div>
+                                    <div class="col-lg-3 prod wow fadeInUp" data-wow-delay="1.1s">
+                                          <a href="mozzarella.html">
+                                                <p id="prod-desc">Mozzarella Cheese</p>
+                                                <img src="images/mozzarella.jpg" alt="">
+                                                <p id="price">2,000 원</p>
+                                          </a>
+                                    </div>
+                                    <div class="col-lg-3 prod wow fadeInUp" data-wow-delay="1.1s">
+                                          <a href="camembert.html">
+                                                <p id="prod-desc">Camembert Cheese</p>
+                                                <img src="images/camembert.jpg" alt="">
+                                                <p id="price">2,000 원</p>
+                                          </a>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+
+            <!-- CHEESE ENDS -->
+            
+            <!-- Fat and Oils COLLECTION - 유지류 -->
+
+            <div class="collection" id="fat">
+                  <p id="heading">Fat and Oil</p>
+
+                  <div class="section prod-list">
+                        <div class="container-fluid">
+                              <div class="row some-cards">
+                                    <div class="col-lg-3 prod wow fadeInUp" data-wow-delay="0.5s">
+                                          <a href="whipping.html">
+                                                <p id="prod-desc">Whipping Cream</p>
+                                                <img src="images/whipping.jpg" alt="">
+                                                <p id="price">2,000 원</p>
+                                          </a>
+                                    </div>
+                                    <div class="col-lg-3 prod wow fadeInUp" data-wow-delay="1.1s">
+                                          <a href="whipped.html">
+                                                <p id="prod-desc">Whippied Cream</p>
+                                                <img src="images/whipped.jpg" alt="">
+                                                <p id="price">2,000 원</p>
+                                          </a>
+                                    </div>
+                                    <div class="col-lg-3 prod wow fadeInUp" data-wow-delay="1.1s">
+                                          <a href="butter.html">
+                                                <p id="prod-desc">Butter</p>
+                                                <img src="images/butter.jpg" alt="">
+                                                <p id="price">2,000 원</p>
+                                          </a>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+            
+            <!-- Fat and Oils ENDS -->
+            
+            
+
+            <!-- CATEGORIES SECTION STARTS -->
+
+            <div class="container-fluid">
+                  <div class="row section shop">
+                        <div class="col-lg-8">
+                              <p class="wow fadeInUp" data-wow-delay="0.4s">우유사조가 직접 키워 건강한 소에서 직접 추출한 신선하고 맛있는 우유.</p>
+
+                              <div class="link wow fadeInUp" data-wow-delay="0.6s">
+                                    <a href="shop.html">다른 제품 보러가기 <ion-icon name="arrow-round-forward"></ion-icon></a>
+                              </div>
+                        </div>
+                  </div>
+
+                  <div class="container-fluid">
+                        <div class="row some-cards">
+                              <div class="col-lg-3"></div>
+
+                              <div class="col-lg-3 prod wow fadeInUp" data-wow-delay="0.3s">
+                                    <img src="images/detail1.jpg" alt="">
+                                    <p id="prod-desc">Aimez-vous le lait?</p>
+                              </div>
+
+                              <div class="col-lg-3 prod wow fadeInUp" data-wow-delay="0.5s">
+                                    <img src="images/detail2.jpg" alt="">
+                                    <p id="prod-desc">Quel genre de lait aimez-vous?</p>
+                              </div>
+
+                              <div class="col-lg-3 prod wow fadeInUp" data-wow-delay="0.7s">
+                                    <img src="images/detail3.jpg" alt="">
+                                    <p id="prod-desc">Quel que soit le lait que vous buvez, notre lait est génial.</p>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+
+
+            <!-- CATEGORIES SECTION ENDS -->
+
+            <div class="whitespaces"></div>
+
+            <!-- FOOTER STARTS -->
+
+            <div class="container-fluid footer">
+                  <div class="section container">
+                        <footer>
+                              <div class="row">
+                                    <div class="col-lg-3 block">
+                                          <p>123, Teheran-ro, Gangnam-gu,
+                                          <br>
+                                          Seoul,
+                                          <br>
+                                          Republic of Korea</p>
+                                    </div>
+                                    <div class="col-lg-3 block">
+                                          <p>FAQs
+                                          <br>
+                                          Return Policy
+                                          <br>
+                                          Shipping</p>
+                                    </div>
+                                    <div class="col-lg-3 block">
+                                          <p>Careers
+                                          <br>
+                                          Community
+                                          <br>
+                                          Wholesale</p>
+                                    </div>
+                                    <div class="col-lg-3 block">
+                                    	
+                                    </div>
+                              </div>
+                        </footer>
+                  </div>
+            </div>
+
+            <!-- FOOTER ENDS -->
+
+      </div>
+      <script type="text/javascript">
+		
+      //Scroll reveal animations
+	
+      new WOW().init();
+	
+      //Scroll activated background change
+      $(function() {
+            $(document).scroll(function() {
+                  var $nav = $(".nav");
+                  $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+            });
+      });
+
+      //Toggle MENU
+
+      var t1 = new TimelineMax({paused: true});
+      t1.to(".menu", 0.5, {
+            left: "0%",
+            ease: Power2.easeInOut
+      });
+
+      t1.reverse();
+      $(document).on("click", ".menu-open", function() {
+            t1.reversed(!t1.reversed());
+      });
+      $(document).on("click", ".menu-close", function() {
+            t1.reversed(!t1.reversed());
+      });
+      
+    //Toggle CART
+
+      var t2 = new TimelineMax({paused: true});
+      t2.to(".cart", 0.5, {
+            right: "0%",
+            ease: Power2.easeInOut
+      });
+
+      t2.reverse();
+      $(document).on("click", ".cart-open", function() {
+            t2.reversed(!t2.reversed());
+            
+      });
+      $(document).on("click", ".cart-close", function() {
+            t2.reversed(!t2.reversed());
+      });
+      
+	//세로로 열리는 메뉴
+	      
+	      $(function(){
+			var m=$('.menu>ul>li>a');
+			var div=$('.menu>ul>li>div');
+	
+			m.each(function(){
+				$(this).click(function(){
+					//$(this).next().slideToggle(800)
+					$(this).next().slideToggle(800)
+					.parent().siblings().find('div:visible').slideUp(800);
+				});
+			});
+		});
+
+      </script>
+</body>
+</html>

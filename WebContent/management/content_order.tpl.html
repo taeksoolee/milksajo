@@ -1,0 +1,68 @@
+<meta charset="utf-8">
+
+<div class="btn-group mr-2">
+	<!-- 세로고침 버튼 -->
+  <button type="button" class="btn btn-success" ng-click="dataRefresh('order')"><i class="fas fa-sync-alt"></i></button>
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <div class="input-group-text"><i class="fa fa-search"></i></div>
+    <button class="btn btn-outline-secondary" type="button" ng-click="changeOrderSearchModel()">{{selectOrderModel}}</button>
+  </div>
+  <input type="text" id="orderSearch" class="form-control" ng-model="orderSearch[selectOrderModel]" placeholder="search">
+</div>
+
+<div class="btn-group mr-2">
+  <button type="button" class="btn btn-warning" ng-click="openBatchSearchForm()">Batch</button>
+</div>
+
+<div id="order-table">
+  <table class="table">
+      <thead class="thead-dark">
+      <!-- table title -->
+        <tr>
+          <th class="no">no</th>
+          <th class="order-no" ng-click="sortBy('order-no')">order_no</th>
+          <th class="serial" ng-click="sortBy('serial')">serial</th>
+          <th class="amount" ng-click="sortBy('amount')">amount</th>
+          <th class="price" ng-click="sortBy('price')">price</th>
+          <th class="deposit" ng-click="sortBy('deposit')">deposit</th>
+          <th class="refund" ng-click="sortBy('refund')">refund</th>
+          <th class="state" ng-click="sortBy('state')">state</th>
+          <th class="user" ng-click="sortBy('user')">user</th>
+          <th class="change">change</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="order in orders | orderBy: sortField:reverseOrder | filter: orderSearch | limitTo : tableOrderLimit">
+          <td>{{$index + 1}}</td>
+          <td>{{order.no}}</td>
+          <td>{{order.serial}}</td>
+          <td>{{order.amount}}</td>
+          <td>{{order.price}}</td>
+          <td><input type="number" value="{{order.deposit}}" style="width:100%;" /></td>
+          <td><input type="number" value="{{order.refund}}" style="width:100%;" /></td>
+          <td>{{order.state}}</td>
+          <td>{{order.user}}</td>
+          <td class="btns">
+              <button type="button" style="margin: 14px auto;">...</button>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+      	<tr>
+      		<td colspan="10" class="downTd">
+      		<button type="button" ng-click="downList('order')">
+      			<i class="fa fa-chevron-down"></i>
+      		</button>
+      		</td>
+      	</tr>
+      </tfoot>
+    </table>
+</div>
+
+<!-- order batch-search form -->
+<div ng-show="viewControl.batchSearch.value">
+	<batch-search></batch-search>
+</div>

@@ -1,0 +1,82 @@
+<meta charset="utf-8">
+
+
+<div class="btn-group mr-2">
+	<!-- 세로고침 버튼 -->
+  <button type="button" class="btn btn-success" ng-click="dataRefresh('user')"><i class="fas fa-sync-alt"></i></button>
+</div>
+
+<div class="btn-group mr-2">
+	<!-- 생일검색 -->
+  <button type="button" class="btn btn-warning" ng-click="openRangeSearchForm()"><i class="far fa-calendar-alt"></i></button>
+</div>
+<div class="btn-group mr-2">
+  <!-- 상태변경 -->
+  <select class="form-control" ng-model="selectedStatuse" ng-selected="nomal">
+  	<option value="nomal" selected>일반</option>
+  	<option value="manager">관리자</option>
+  	<option value="dormancy">휴면</option>
+  	<option value="suspended">정지</option>
+  </select>
+  <button type="button" class="btn btn-warning" ng-click="changeStatus()"><i class="fas fa-check"></i></button>
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <div class="input-group-text"><i class="fa fa-search"></i></div>
+    <button class="btn btn-outline-secondary" type="button" ng-click="changeUserSearchModel()">{{selectUserModel}}</button>
+  	<input type="text" id="userSearch" class="form-control" ng-model="userSearch[selectUserModel]" placeholder="search"></input>
+  </div>
+</div>
+
+<div id="user-table">
+  <table class="table">
+      <thead class="thead-dark">
+      <!-- table title -->
+        <tr>
+          <th class="userCheck" ng-click="choiceAll('user')"><input type="checkbox"/></th>
+          <th class="no">no</th>
+          <th class="id" ng-click="sortBy('id')">id</th>
+          <th class="name" ng-click="sortBy('name')">name</th>
+          <th class="age" ng-click="sortBy('age')">age</th>
+          <th class="birthday" ng-click="sortBy('birthday')">birthday</th>
+          <th class="tel" ng-click="sortBy('tel')">Tel.</th>
+          <th class="email" ng-click="sortBy('email')">e-mail</th>
+          <th class="addr" ng-click="sortBy('addr')">address</th>
+          <th class="joindate" ng-click="sortBy('joindate')">join date</th>
+          <th class="lastlogin" ng-click="sortBy('lastlogin')">last login</th>
+          <th class="status" ng-click="sortBy('status')">status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="user in users | orderBy: sortField:reverseOrder | filter: userSearch | limitTo : tableUserLimit">
+          <td><input type="checkbox" ng-click="choice(user.id, $event.target)"/></td>
+          <td>{{$index + 1}}</td>
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.age}}</td>
+          <td>{{user.birthday}}</td>
+          <td>{{user.tel}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.addr}}</td>
+          <td>{{user.joindate}}</td>
+          <td>{{user.lastlogin}}</td>
+          <td>{{user.status}}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+      	<tr>
+      		<td colspan="12" class="downTd">
+      		<button type="button" ng-click="downList('user')">
+      			<i class="fa fa-chevron-down"></i>
+      		</button>
+      		</td>
+      	</tr>
+      </tfoot>
+    </table>
+</div>
+
+<!-- user range-search form -->
+<div ng-show="viewControl.rangeSearch.value">
+	<range-search></range-search>
+</div>

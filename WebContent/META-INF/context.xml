@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- WAS 실행시 인스턴스를 생성하기 위한 정보에 이름을 부여하는 파일- JNDI -->
+<!-- JNDI(Java Naming Directory Interface : 인스턴스 생성에 필요한 정보를 
+작성하여 WAS에 이름을 부여하여 저장하는 기능 -->
+<Context>
+	<!-- Resource : 인스턴스 생성에 필요한 정보를 속성과 속성값으로 제공하는 엘리먼트 -->
+	<!-- name 속성 : 자원이름을 속성값으로 설정 - WAS 내부에 "java:comp/env/자원이름"으로 저장 -->
+	<!-- => (자바영역안에 있는 comp디렉토리 밑에 있는 env밑에있는 자원명으로 저장해라) -->
+	<!-- auth 속성 : 인스턴스를 관리하기 위한 사용자를 속성값으로 설정 -->
+	<!-- type 속성 : 자원이름으로 생성되어 반환받는 인스턴스의 자료형을 속성값으로 설정 -->
+	<!-- factory 속성 : 인스턴스를 생성하기 위한  Factory 클래스를 속성값으로 설정 -->
+	<!-- 기타 속성 : 인스턴스에 필요한 정보를 속성(필드명)과 속성값(필드값)으로 설정 -->
+	<Resource name="jdbc/oracle" auth="Container" type="javax.sql.DataSource"
+		factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
+		driverClassName="oracle.jdbc.driver.OracleDriver"
+		url="jdbc:oracle:thin:@182.237.126.17:1521:xe" username="milk"
+		password="mk1234" initialSize="10" maxIdle="10" maxTotal="20"/>
+</Context>

@@ -1,0 +1,539 @@
+/*****************************************
+       ________________
+      / ____/ ___/ ___/
+     / /    \__ \\__ \ 
+    / /___ ___/ /__/ / 
+    \____//____/____/  
+******************************************/
+@charset "utf-8";
+*{
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.index7{
+	z-dinex:7;
+}
+
+#permissionDenined{
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold; 
+	margin-top: 30px;
+}
+/*****************************************
+    header
+*****************************************/
+.nav-bar a{
+	color: black;
+}
+.nav-bar a:hover{
+	color: white !important;
+	cursor: pointer;
+}
+header{
+    float: right;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    top: 0px;
+    background-color: skyblue;
+    line-height: 40px;
+    font-weight: bold;
+}
+/*****************************************
+    contents
+*****************************************/
+/* table setting */
+.table th, .table td{
+	border: 1px solid lightgray;
+	text-align: center;
+	font-size: 10px;
+}
+
+.table .downTd{
+	maring: 0px;
+	padding: 0px
+}
+
+.table .downTd button{
+	border: none;
+	width: 100%;
+}
+
+.table select{
+	padding: 0px;
+	height: 25px;
+	font-size: 12px;
+}
+
+.table .btns{
+	padding: 0px;
+	line-height: 1;
+}
+
+.table .btns .btn{
+	text-align: center;
+}
+
+.table .btn-more{
+	height: 30px;
+	line-height: 0;
+}
+
+/* style for home */
+/*
+#home-carousel{
+		border-radius: 5px;
+    width: 70%;
+    margin: 0 auto;
+}
+#home-carousel img {
+	border-radius: 30px;
+	margin: 30px 0px;
+}
+.carousel-indicators{
+	top:665px;
+}
+*/
+.chart-box{
+    margin-top: 50px;
+}
+
+/* user-table sell size */
+#user-table .userCheck 	{ width: 2%;}
+#user-table .no			{ width: 3%;}
+#user-table .id			{ width: 8%;}
+#user-table .name		{ width: 3%;}
+#user-table .age		{ width: 3%;}
+#user-table .birthday	{ width: 8%;}
+#user-table .tel		{ width: 9%;}
+#user-table .email		{ width: 14%;}
+#user-table .addr		{ width: 22%;}
+#user-table .joindate	{ width: 8%;}
+#user-table .lastlogin	{ width: 8%;}
+#user-table .status		{ width: 2%;}
+
+/* product-table sell size */
+#product-table .no		{ width: 3%;}
+#product-table .serial	{ width: 10%;}
+#product-table .div		{ width: 15%;}
+#product-table .name	{ width: 27%;}
+#product-table .origin	{ width: 10%;}
+#product-table .size	{ width: 7%;}
+#product-table .price	{ width: 7%;}
+#product-table .amount	{ width: 7%;}
+#product-table .sales	{ width: 7%;}
+#product-table .remove	{ width: 7%;}
+
+/* board-table sell size */
+#board-table .no		{ width: 3%;}
+#board-table .user		{ width: 10%;}
+#board-table .regdate	{ width: 17%;}
+#board-table .ipaddr	{ width: 11%;}
+#board-table .title		{ width: 34%;}
+#board-table .state		{ width: 7%;}
+#board-table .content	{ width: 7%;}
+#board-table .remove	{ width: 7%;}
+
+
+/* order-table sell size */
+#order-table .no		{ width: 5%;}
+#order-table .order-no	{ width: 13%;}
+#order-table .product	{ width: 8%;}
+#order-table .amount	{ width: 1%;}
+#order-table .deposit	{ width: 12%;}
+#order-table .refund	{ width: 12%;}
+#order-table .state		{ width: 8%;}
+#order-table .user		{ width: 13%;}
+#order-table .change	{ width: 5%;}
+
+/* page-table sell size */
+#page-table .no	{ width: 5%;}
+#page-table .board	{ width: 10%;}
+
+/************************************************/
+/* contents-nav style */
+mgr-contents article{
+	margin-top: 100px;
+    margin-left: 17.5%;
+    margin-right: 10%;
+    width: 65%;
+}
+
+#content-view{
+	display: block;
+    margin-left: 17.5%;
+    margin-right: 10%;
+    width: 65%;
+}
+
+#content-view .btn-group{
+	margin-top: 20px;
+}
+
+#content-view .input-group{
+	margin-top: 20px;
+	margin-bottom: 0px;
+	float: right;
+	width: 350px;
+}
+
+#content-view .input-group input{
+	width: 190px;
+}
+
+#content-view .input-group button{
+	width: 90px;
+	border: 1px solid lightgray;
+	background-color: lightgray;
+}
+
+#content-view .input-group button:hover{
+	background-color: gray;
+	font-weight: bold;
+}
+
+
+/*****************************************
+    footer
+*****************************************/
+footer{
+    width: 100%;
+    height: 75px;
+    margin-top: 150px;
+    background-color: black;
+}
+
+footer .copyright{
+    color: white;
+    text-align: center;
+}
+/*****************************************
+    다양한 form에 대한 style
+*****************************************/
+.error{
+	color: red;
+	font-weight: bold;
+}
+
+.form{
+	z-index: 7;
+	display: -webkit-inline-box;
+}
+
+/* form1(제일 큰 사이즈) : login, join, notice, menual */
+.form1{
+	padding: 40px;
+	position: fixed;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	background-color: white;
+	overflow: hidden;
+}
+
+/* form2(왼쪽으로 치우침) :*/
+.form2{
+	padding: 40px;
+	position: fixed;
+    top: 10%;
+    left: 10%;
+    width: 450px;
+    height: 80%;
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	background-color: white;
+}
+/* form3(정가운데) : */
+.form3{
+	padding: 40px;
+	position: fixed;
+    top: 10%;
+    left: auto;
+    width: 450px;
+    height: 80%;
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	background-color: white;
+}
+.from .title-form{
+	text-align: center;
+}
+
+.form .title{
+    text-align: center;
+    font-size: 35px;
+    padding: 20px;
+}
+
+.form .exit-btn{
+	border-radius: 30px;
+    width: 30px;
+    height: 30px;
+    float: right;
+}
+
+.form .btn-group{
+	float: right; 
+}
+
+
+.form .form-btn-group{
+	padding: 10% 35%;
+}
+
+/*login_form*******************************************************/
+
+.login-form{
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	padding: 20px;
+    width: 400px;
+    margin: 3%;
+}
+
+.login-form .title{
+    text-align: center;
+    font-size: 35px;
+    padding: 20px;
+    margin: 15px 32%;
+}
+
+.login-form .form-btn-group{
+	padding: 5% 20%;
+}
+
+.login-form .form-btn-group .btn{
+	width: 75px;
+	margin: 0 5%;
+}
+
+#login-carousel{
+    z-index: 10;
+    top: 26px;
+    left: 8%;
+    width: 50%;
+}
+
+#login-carousel .w-100{
+    border-radius: 10px;
+    height: 38.4em;
+}
+
+/*join_form*******************************************************/
+
+.join-form{
+	border: 1px solid lightgray;
+    border-radius: 5px;
+    margin: 0 100px;
+    padding: 20px 50px;
+    height: 650px;
+}
+
+.join-form table{
+	margin: 0 auto;	
+}
+
+.join-form .join-label{
+    text-align: right;
+}
+
+.join-form input{
+	width: 300px;
+}
+
+.join-form th{
+	padding-left: 20px;
+    padding-top: 10px;
+}
+
+
+.join-form .form-btn-group{
+	padding: 8% 15%;
+}
+
+.join-form .form-btn-group .btn{
+	width: 75px;
+	margin: 0 10%;
+}
+
+/*notice_form*******************************************************/
+.notice-form .no				{ width: 5%;}
+.notice-form .employee-no		{ width: 10%;}
+.notice-form .comment			{ width: 75%;}
+.notice-form .date				{ width: 10%;}
+
+.notice-form .footer-btns .btn{
+	border: 1px solid lightgray;
+}
+
+/*menual_form*******************************************************/
+.menual-form{
+	display: inline;
+}
+
+.menual-form .content{
+	width: 100%;
+}
+.menual-form .ele{
+	height: 20%;
+}
+
+
+/*range_search_form*******************************************************/
+.range-search-form{
+   	width: 100%;
+}
+
+.range-search-form .btns{
+	margin: 80px 35.1%;
+    text-align: center;
+}
+
+.range-search-form button{
+	margin: 0 6px;
+    width: 27%;
+}
+
+.range-search-form label{
+  	width: 30%;
+    margin: 20px 35%;
+}
+
+.range-search-form input{
+   	width: 30%;
+    margin: 0 auto;
+}
+/*batch_search_form*******************************************************/
+.batch-search-form{
+   	width: 100%;
+}
+
+.batch-search-form .btns{
+	margin: 80px 35.1%;
+    text-align: center;
+}
+
+.batch-search-form button{
+	margin: 0 6px;
+    width: 27%;
+}
+
+.batch-search-form label{
+  	width: 30%;
+    margin: 20px 35%;
+}
+
+.batch-search-form input{
+   	width: 30%;
+    margin: 0 auto;
+}
+
+/*image_form*******************************************************/
+.image-form{
+	width: 100%;
+}
+
+.image-form .title-form{
+	text-align: center;
+    margin-top: 40px;
+}
+
+.image-form .image-product-inf,
+.image-form .image-section{
+	display: inline-block;
+	width: 35%;
+}
+
+.image-form .image-product-inf .title,
+.image-form .image-section .title
+{
+	font-size: 25px;
+	margin: 0 37%;
+}
+.image-form .image-product-inf .input-group{
+    width: 80% !important;
+}
+
+.image-form .image-product-inf input{
+	width: 40%;
+}
+.image-form .image-product-inf .input-group .input-group-text{
+	width: 65px;
+}
+
+.image-form .image-section .input-group{
+	left: 74%;
+    top: -51px;
+}
+    
+.image-form .image-section .title{
+    margin: 0 30%;
+}
+
+/*****************************************
+/*back ground dark space*/
+.background-dark{
+    background-color: black;
+    position: fixed;
+    width: 100%;
+	    height: 100%;
+    top: 0px;
+    left: 0px;
+    opacity: .9;
+}
+
+.alert{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    color: red;
+}
+.ng-hide{
+   opacity: 0;
+     transform: scale(0.8);
+}
+/*****************************************
+    fixedMenu css
+******************************************/
+#fixedMenu{
+	position: fixed;
+    top: 40%;
+    left: 88%;
+}
+.alert-bar{
+	z-index: 10;
+	padding: 0px;
+	margin: 0 auto;
+	position:fixed;
+	top: 0px;
+	left: 0px;
+	color: white;
+	background-color: green;
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	font-size: 15px;
+	line-height: 2.5;
+}
+
+.error-bar{
+	z-index: 10;
+	padding: 0px;
+	margin: 0 auto;
+	position:fixed;
+	top: 0px;
+	left: 0px;
+	color: white;
+	background-color: red;
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	font-size: 15px;
+	line-height: 2.5;
+}

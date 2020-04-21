@@ -1,0 +1,84 @@
+<meta charset="utf-8">
+
+<!-- product : 제품등록 -->
+<div class="form form1">
+	<div class="add-product-form">
+		<div class="btn-group">
+			<button type="button" class="exit-btn" ng-click="closeAddForm()">X</button>
+		</div>
+		
+		<div class="title-form">
+			<label class="title">Product</label>
+		</div>
+		
+		<!-- 시리얼 / 구분(select) / 이름 / 원산지 / 용량 / 가격 -->
+		<div class="inputs">
+			<label>시리얼번호</label>
+			<input type="number" class="form-control" ng-model="addProduct.serial" maxlength="4" required/>
+			<label>구분</label>
+			<select class="form-control" ng-model="sDiv">
+				<option ng-repeat="option in productDivision" value="{{option}}">{{option.div}}</option>
+			</select>
+			<label>이름</label>
+			<input type="text" class="form-control" ng-model="addProduct.name" required/>
+			<label>원산지</label>
+			<input type="text" class="form-control" ng-model="addProduct.origin" required/>
+			<label>용량</label>
+			<input type="number" class="form-control" ng-model="addProduct.size" required/>
+			<label>가격</label>
+			<input type="number" class="form-control" ng-model="addProduct.price" required/>
+			<button type="button" class="btn btn-dark" ng-click="addProduct()">입력하기</button>
+		</div>
+		<div class="inputs modify">
+			<label>시리얼번호</label>
+			<select class="form-control" ng-model="selectedProduct" ng-change="changeData()">
+				<option ng-repeat="option in productOption" value="{{option}}">{{option.serial}}</option>
+			</select>
+			<label>이름</label>
+			<input type="text" class="form-control" ng-model="selected.name" required/>
+			<label>원산지</label>
+			<input type="text" class="form-control" ng-model="selected.origin" required/>
+			<label>용량</label>
+			<input type="text" class="form-control" ng-model="selected.size" required/>
+			<label>가격</label>
+			<input type="text" class="form-control" ng-model="selected.price" required/>
+			<button type="button" class="btn btn-dark" ng-click="modifyProduct()">수정하기</button>
+		</div>
+	</div>
+</div>
+
+<style>
+	.add-product-form{
+		width: 100%;
+	}
+	.add-product-form .title-form{
+		text-align: center;
+    	font-size: 35px;
+    	padding-top: 18px;
+	}
+	.add-product-form .inputs{
+		display: inline-block;
+    	width: 40%;
+    	margin: 0 4%;
+	}
+	
+	.add-product-form input,
+	.add-product-form select{
+		margin-bottom: 10px;
+	}
+	
+	.add-product-form textarea{
+		height: 230px;
+		margin-bottom: 10px;
+		resize: none;
+	}
+	
+	.add-product-form .btn{
+		width: 100%;
+    	margin-top: 25px;
+	}
+	
+</style>
+
+
+

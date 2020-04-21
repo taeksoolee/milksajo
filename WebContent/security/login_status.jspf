@@ -1,0 +1,29 @@
+<%-- 권한이 필요한 페이지에 삽입하여 사용. 로그인 안되어있으면 로그인 창 띄움--%>
+<%@page import="com.milk.dto.MemberDTO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+// 로그인 정보를 UserDTO로 저장
+	MemberDTO loginMember=(MemberDTO)session.getAttribute("loginMember");
+	
+//비로그인 상태에 대한 처리
+	if(loginMember==null) {
+		// uri 설정
+		String requestURI=request.getRequestURI();
+		String queryString=request.getQueryString();
+		if(queryString==null || queryString.equals("")) {
+			queryString="";
+		} else {
+			queryString="?"+queryString;
+		}
+		
+		// 세션에 주소 저장
+		session.setAttribute("uri", requestURI+queryString);
+		session.setAttribute("message", "로그인 사용자만 접근 가능한 페이지입니다.");
+				
+		out.println("<script type='text/javascript'>");
+		out.println("location.href='"+request.getContextPath()+"/index.jsp?workgroup=member&work=member_login';");
+		out.println("</script>");	
+		return;
+	}
+%>

@@ -1,0 +1,14 @@
+<%-- 로그인 체크해서 에러페이지로 보냄 --%>
+<%@page import="com.milk.dto.MemberDTO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	MemberDTO loginMember=(MemberDTO)session.getAttribute("loginMember");
+
+	if(loginMember==null) {
+		out.println("<script type='text/javascript'>");
+		out.println("location.href='"+request.getContextPath()+"/index.jsp?workgroup=error&work=errorLogin';");
+		out.println("</script>");
+		return;
+	}
+%>

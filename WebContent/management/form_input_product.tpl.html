@@ -1,0 +1,54 @@
+<meta charset="utf-8">
+
+<!-- product : 제품등록 -->
+<div class="form form1">
+	<div class="input-form">
+		<div class="btn-group">
+			<button type="button" class="exit-btn" ng-click="closeInputForm()">X</button>
+		</div>
+		
+		<div class="title-form">
+			<label class="title">Input&nbsp;Product</label>
+		</div>
+		
+		<!-- 시리얼 / 구분(select) / 이름 / 원산지 / 용량 / 가격 -->
+		<div class="inputs">
+			<label style="margin-top:40px;">시리얼번호</label>
+			<select class="form-control" ng-model="selectedProduct" ng-change="changeData()">
+				<option ng-repeat="option in productOption" value="{{option}}">{{option.serial}}</option>
+			</select>
+			<label>구분</label>
+			<input class="form-control" ng-model="selected.div" readonly/>
+			<label>이름</label>
+			<input class="form-control" ng-model="selected.name" readonly/>
+			<label>입고수량</label>
+			<input type="number" class="form-control" ng-model="inputAmount" required>
+			<button type="button" class="btn btn-dark" ng-click="inputProduct()">입고하기</button>
+		</div>
+	</div>
+</div>
+
+<style>
+	.input-form{
+		width: 100%;
+	}
+	.input-form .title-form{
+		text-align: center;
+    	font-size: 35px;
+    	padding-top: 18px;
+	}
+	.input-form .inputs{
+		width: 60%;
+    	margin-left: 20%;
+	}
+	
+	.input-form input,
+	.input-form select{
+		margin-bottom: 20px;
+	}
+	
+	.input-form .btn{
+		width: 100%;
+    	margin-top: 25px;
+	}
+</style>

@@ -1,0 +1,58 @@
+<meta charset="utf-8">
+
+<!-- order : 주문관리를 일괄처리하는 form -->
+<div class="form form1">
+	<div class="batch-search-form">
+		<div class="btn-group">
+			<button type="button" class="exit-btn" ng-click="closeBatchSearchForm()">X</button>
+		</div>
+		
+		<div class="title-form">
+			<label class="title">Batch&nbsp;Processing</label>
+		</div>
+		
+		<div class="input-group mb-3" style="float:left; width: 100%;">
+    			<div class="input-group-text">order_no</div>
+    			<input type="text" class="form-control" ng-model="batchSearch" placeholder="search" ng-change="changeBoardSearchModel()">
+   				<button class="btn btn-outline-secondary" type="button" ng-click="changeBoardSearchModel()"><i class="fa fa-search"></i></button>
+		</div>
+		<table class="table" style="width: 100%; text-align: center;">
+		<thead class="thead-dark">
+			<tr>
+				<td>serial</td>
+				<td>amount</td>
+				<td>price</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="order in showOrder">
+				<td>{{order.serial}}</td>
+				<td>{{order.amount}}</td>
+				<td>{{order.price}}</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td>total</th>
+				<td colspan="2">{{selectOrderTotalPrice | currency:'₩'}}</td>
+			</tr>
+			<tr>
+				<td colspan="3" >
+					<button type="button" ng-click="batchEvent(batchSearch)" class="btn btn-dark">일괄 입금처리</button>
+				</td>
+			</tr>
+			<tr colspan="2"></tr>
+			<tr>
+				<button type="button" ng-click="batchPrevMove()" ng-model="prevBatch" class="btn btn-primary" style="width: 3%; padding: 0;">{{prevBatch}}</button>
+				<button type="button" ng-click="batchNextMove()" ng-model="nextBatch" class="btn btn-primary" style="width: 3%; padding: 0;">{{nextBatch}}</button>
+			</tr>
+		</tfoot>
+		</table>
+	</div>
+</div>
+
+<style>
+	.batch-search-form tr, .batch-search-form td{
+		font-size:15px;
+		}
+</style>

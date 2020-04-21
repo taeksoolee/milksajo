@@ -1,0 +1,59 @@
+<meta charset="utf-8">
+
+<div class="btn-group mr-2">
+	<!-- 세로고침 버튼 -->
+  <button type="button" class="btn btn-success" ng-click="dataRefresh('page')"><i class="fas fa-sync-alt"></i></button>
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <div class="input-group-text"><i class="fa fa-search"></i></div>
+    <button class="btn btn-outline-secondary" type="button" ng-click="changePageSearchModel()">{{selectPageModel}}</button>
+  </div>
+  <input type="text" id="pageSearch" class="form-control" ng-model="pageSearch[selectPageModel]" placeholder="search">
+</div>
+
+<div class="btn-group mr-2">
+  <button type="button" class="btn btn-warning" ng-click="openImageForm()">Add</button>
+</div>
+
+<div id="page-table">
+  <table class="table">
+      <thead class="thead-dark">
+      <!-- table title -->
+        <tr>
+          <th class="no">no</th>
+          <th class="pageNo">pageNo</th>
+          <th class="Serial" ng-click="sortBy('serial')">serial</th>
+          <th class="admin" ng-click="sortBy('admin')">admin</th>
+          <th class="mainImage">Image</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="page in pages | orderBy: sortField:reverseOrder | filter: pageSearch | limitTo : tablePageLimit">
+          <td>{{$index + 1}}</td>
+          <td>{{page.pageNo}}</td>
+          <td>{{page.serial}}</td>
+          <td>{{page.admin}}</td>
+          <td><img ng-src="../images/{{page.mainImage}}.jpg" width="20" height="20"/></td>
+        </tr>
+      </tbody>
+      <tfoot>
+      	<tr>
+      		<td colspan="10" class="downTd">
+      		<button type="button" ng-click="downList('page')">
+      			<i class="fa fa-chevron-down"></i>
+      		</button>
+      		</td>
+      	</tr>
+      </tfoot>
+    </table>
+</div>
+
+<div class="index7" ng-show="viewControl.image.value">
+	<image-form></image-form>
+</div>
+
+
+
+

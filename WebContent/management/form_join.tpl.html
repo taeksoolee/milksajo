@@ -1,0 +1,86 @@
+<meta charset="utf-8">
+
+<div class="form form1">
+	<div class="join-form">
+		<div class="btn-group">
+			<button type="button" class="exit-btn" ng-click="closeJoinForm()">X</button>
+		</div>
+		<form name="joinForm" method="post" ng-submit="join()">
+		<div class="title-form">
+			<label class="title" style="width: 100%;">Join</label>
+		</div>
+				<table>
+				<!-- ----------------------------------------------------------------------- -->
+				<tr>
+					<th class="join-label"><label class="join-label" for="mgrNo">회원번호</label></th>
+					<th class="join-input"><input type="text" name="mgrNo" class="form-control" ng-keyup="isExist(joinForm.mgrNo.$viewValue)" placeholder="Enter employee_no" ng-model="mgrNoJoin" ng-pattern="/^[0-9]{10}$/" ng-required="true"></th>
+				</tr>
+				<tr>
+					<th></th>
+					<th ng-message="joinForm.mgrNo.$error">
+						<span class="error" ng-show="joinForm.mgrNo.$error.required">회원번호 입력이필요합니다.</span>
+						<span class="error" ng-show="joinForm.mgrNo.$error.pattern">10자리이상의 숫자를 입력하세요.</span>
+						<span class="error" ng-show="joinForm.mgrNo.$valid && exist">중복된 회원이 존재합니다.</span>
+					</th>
+				</tr>
+				<!-- ----------------------------------------------------------------------- -->
+				<!-- 조건1. 6~20 영문 대소문자 / 조건2. 최소 1개의 숫자 혹은 특수 문자를 포함해야 함-->
+				<tr>
+					<th class="join-label"><label class="join-label" for="mgrPwd">비밀번호</label></th>
+					<th class="join-input"><input type="password" name="mgrPwd" class="form-control" ng-keydown="compare(mgrRPwdJoin)" ng-keypress="compare(mgrRPwdJoin)" ng-keyup="compare(mgrRPwdJoin)" placeholder="Enter password" ng-model="mgrPwdJoin" ng-pattern="/^(?=.*[a-zA-Z])((?=.*\d)|(?=.*\W)).{6,20}$/" ng-required="true"></th>
+				</tr>
+				<tr>
+					<th></th>
+					<th ng-message="joinForm.mgrPwd.$error">
+						<span class="error" ng-show="joinForm.mgrPwd.$error.required">비밀번호 입력이 필요합니다.</span>
+						<span class="error" ng-show="joinForm.mgrPwd.$error.pattern">1개이상의 숫자 또는 특수문자 포함한 6~20 영문 대소문자를 입력하세요.</span>
+					</th>
+				</tr>
+				<!-- ----------------------------------------------------------------------- -->
+				<tr>
+					<th class="join-label"><label class="join-label" for="mgrRPwd">비밀번호 확인</label></th>
+					<th class="join-input"><input type="password" name="mgrRPwd" class="form-control" ng-keydown="compare(mgrRPwdJoin)" ng-keypress="compare(mgrRPwdJoin)" ng-keyup="compare(mgrRPwdJoin)" placeholder="Enter re password" ng-model="mgrRPwdJoin" ng-keyup="compare(mgrPwd)" ng-required="true"></th>
+				</tr>
+				<tr>
+					<th></th>
+					<th>
+						<span class="error" ng-show="!isconfirm && joinForm.mgrPwd.$dirty">비밀번호가 일치하지 않습니다.</span>
+					</th>
+				</tr>
+				<!-- ----------------------------------------------------------------------- -->
+				<tr>
+					<th class="join-label"><label class="join-label" for="mgrNameJoin">이름</label></th>
+					<th class="join-input"><input type="text" name="mgrName" class="form-control" placeholder="Enter your name" ng-model="mgrNameJoin" ng-pattern="/^[가-힣]{2,4}$/" ng-required="true"></th>
+				</tr>
+				<tr>
+					<th></th>
+					<th ng-message="joinForm.mgrName.$error">
+						<span class="error" ng-show="joinForm.mgrName.$error.required">이름을 입력해주세요.</span>
+						<span class="error" ng-show="joinForm.mgrName.$error.pattern">2~4자리 한글로 입력해주세요.</span>
+					</th>
+				</tr>
+				<!-- ----------------------------------------------------------------------- -->
+				<tr>
+					<th class="join-label"><label class="join-label" for="mgrCodeJoin">코드</label></th>
+					<th class="join-input"><input type="text" name="mgrCode" class="form-control" placeholder="Enter your name" ng-model="mgrCodeJoin" ng-pattern="/^[a-zA-Z0-9]{10}$/" ng-required="true"></th>
+				</tr>
+				<tr>
+					<th></th>
+					<th ng-message="joinForm.mgrCode.$error">
+						<span class="error" ng-show="joinForm.mgrCode.$error.required">코드를 입력해주세요.</span>
+						<span class="error" ng-show="joinForm.mgrCode.$error.pattern">10자리 문자로 입력해주세요.</span>
+					</th>
+				</tr>
+				<!-- ----------------------------------------------------------------------- -->
+				<tr>
+					<th colspan="2" class="form-btn-group">
+						<button type="submit" class="btn btn-primary" ng-disabled="joinForm.$invalid || exist || !isconfirm">가입</button>
+						<button type="reset" class="btn btn-warning" ng-click="joinReset()">초기화</button>
+					</th>
+				</tr>
+				<!-- ----------------------------------------------------------------------- -->
+			</table>
+		</form>
+		</div>
+	</div>
+</div>
